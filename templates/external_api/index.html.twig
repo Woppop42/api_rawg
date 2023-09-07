@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ExternalApiController!{% endblock %}
+
+{% block body %}
+{% if json is defined %}
+
+    <pre>
+        {{ dump(json) }}
+    </pre>
+
+{% endif %}
+
+{% if error is defined %}
+    <pre>
+        {{ dump(error) }}
+    </pre>
+
+{% endif %}
+
+
+{% endblock %}
