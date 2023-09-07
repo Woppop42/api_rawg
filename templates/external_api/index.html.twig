@@ -5,18 +5,19 @@
 {% block body %}
 {% if json is defined %}
 
-    <pre>
-        {{ dump(json) }}
-    </pre>
+<pre>
+    {{ dump(json) }}
+</pre>
+
+{% for item in json.results %}
+<img src="{{item.image_background}}" alt="">
+    
+{% endfor %}
+
 
 {% endif %}
 
-{% if error is defined %}
-    <pre>
-        {{ dump(error) }}
-    </pre>
 
-{% endif %}
 
 
 {% endblock %}

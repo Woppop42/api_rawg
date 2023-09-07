@@ -29,7 +29,7 @@ class ExternalApiController extends AbstractController
             // Vérifiez le code de statut de la réponse
             if ($response->getStatusCode() === 200) {
                 // Si la réponse est OK, renvoyez les données JSON
-                $json = new JsonResponse($response->getContent(), $response->getStatusCode(), [], true);
+                $json = json_decode($response->getContent(), true);
                 return $this->render('external_api/index.html.twig', [
                     'json' => $json,
                 ]);
